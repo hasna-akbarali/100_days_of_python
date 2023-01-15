@@ -51,7 +51,7 @@ else:
 
 if((option == 0 and computer_option == 2) or (option == 0 and computer_option == 2) or (option == 1 and computer_option == 0)) :
   print("You Won!")
-elif((option == 0 and computer_option == 0) or (option == 1 and computer_option == 1) or (option == 2 and computer_option == 2)):
+elif(option == computer_option):
   print("Draw!")
 else:
   print("You Lost!")
