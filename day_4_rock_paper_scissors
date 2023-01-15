@@ -1,0 +1,57 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+option = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors. "))
+
+if(option == 0):
+  print(rock)
+elif(option == 1):
+  print(paper)
+elif(option == 2):
+  print(scissors)
+else:
+  print("Wrong Input! Type 0 for Rock, 1 for Paper, 2 for Scissors")
+
+computer_option = random.randint(0,2)
+
+print("Computer chose:")
+
+if(computer_option == 0):
+  print(rock)
+elif(computer_option == 1):
+  print(paper)
+else:
+  print(scissors)
+
+if((option == 0 and computer_option == 2) or (option == 0 and computer_option == 2) or (option == 1 and computer_option == 0)) :
+  print("You Won!")
+elif((option == 0 and computer_option == 0) or (option == 1 and computer_option == 1) or (option == 2 and computer_option == 2)):
+  print("Draw!")
+else:
+  print("You Lost!")
