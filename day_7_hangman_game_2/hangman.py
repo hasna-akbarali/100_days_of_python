@@ -22,6 +22,7 @@ chosen_word = random.choice(words)
 # Create an empty list for the guesses the user will make
 guess_list = []
 
+end_game = False
 # Length of the word that was randomly selected
 length_of_word = len(chosen_word)
 
@@ -31,25 +32,24 @@ chance_to_guess = 6
 for _ in range(length_of_word):
     guess_list.append('_')
 
-while (chance_to_guess > 0):
+while not end_game:
     guess = input('Guess a letter: ').lower()
     if (guess not in chosen_word):
         print(
             f'You guessed {guess}, that\'s not in the word. You lose a life.')
         print(' '.join(guess_list))
         chance_to_guess = chance_to_guess - 1
+        if(chance_to_guess == 0):
+            end_game = True
         print(stages[chance_to_guess])
 
-    elif ('_' in guess_list):
+    if ('_' in guess_list):
         guess_the_letter()
-    elif ('_' not in guess_list):
+        
+    if ('_' not in guess_list):
+        end_game = True
         print(' '.join(guess_list))
         print("You guessed it right!")
 
 if (chance_to_guess == 0):
     print(f'You Lost! The word was {chosen_word}')
-
-# else:
-#     print(' '.join(guess_list))
-#     print('You Lose!')
-
