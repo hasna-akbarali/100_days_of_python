@@ -39,17 +39,17 @@ while not end_game:
             f'You guessed {guess}, that\'s not in the word. You lose a life.')
         print(' '.join(guess_list))
         chance_to_guess = chance_to_guess - 1
+        print(stages[chance_to_guess])
         if(chance_to_guess == 0):
             end_game = True
-        print(stages[chance_to_guess])
-
-    if ('_' in guess_list):
-        guess_the_letter()
         
-    if ('_' not in guess_list):
-        end_game = True
-        print(' '.join(guess_list))
-        print("You guessed it right!")
+    else:
+        if ('_' in guess_list):
+            guess_the_letter()
+        if ('_' not in guess_list):
+            end_game = True
+            print(' '.join(guess_list))
+            print("You guessed it right!")
 
 if (chance_to_guess == 0):
     print(f'You Lost! The word was {chosen_word}')
