@@ -1,5 +1,4 @@
-from replit import clear
-#HINT: You can call clear() to clear the output in the console.
+import os
 
 def questions():
     name = input("What's your name?: ")
@@ -39,7 +38,7 @@ print_questions = True
 while (print_questions):
     more = questions()
     if (more == 'yes'):
-        clear()
+        os.system('clear')
     else:
         clear()
         highest_bid()
