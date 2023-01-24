@@ -98,5 +98,5 @@ def play_game():
 
 # Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
 while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
-  system.
+  os.system('clear')
   play_game()
