@@ -2,6 +2,7 @@ import menu
 
 
 def get_report():
+    """If the user has requested for report"""
     print('Water: ', menu.resources["Water"], 'ml', sep='')
     print('Milk: ', menu.resources["Milk"], 'ml', sep='')
     print('Coffee: ', menu.resources["Coffee"], 'g', sep='')
@@ -9,6 +10,7 @@ def get_report():
 
 
 def total_coins():
+    """Returns the total calculated from coins inserted."""
     print("Please insert coins.")
     quart = eval(input("how many quarters?: "))
     dimes = eval(input("how many dimes?: "))
@@ -19,6 +21,7 @@ def total_coins():
 
 
 def update_menu():
+    """Deduct the required ingredients from the resources and update the money earned"""
     menu.resources["Money"] += menu.MENU[user]["cost"]
     menu.resources["Water"] -= menu.MENU[user]["ingredients"]["water"]
     menu.resources["Milk"] -= menu.MENU[user]["ingredients"]["milk"]
@@ -26,6 +29,7 @@ def update_menu():
 
 
 def check_if_possible():
+    """The order is processed if it can be made."""
     if (menu.resources["Water"] > menu.MENU[user]["ingredients"]["water"]
             and menu.resources["Milk"] > menu.MENU[user]["ingredients"]["milk"]
             and menu.resources["Coffee"] > menu.MENU[user]["ingredients"]["coffee"]):
