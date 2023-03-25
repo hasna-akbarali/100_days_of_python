@@ -27,23 +27,33 @@ scissors = '''
 ---.__(___)
 '''
 
-option = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors. "))
+game_continue = True
 
-game_images = [rock,paper,scissors]
+while game_continue:
+    option = int(input("What do you choose? Type 0 for Rock, 1 for Paper, 2 for Scissors. "))
 
-if(option == 0 or option == 1 or option == 2):
-  print(game_images[option])
-else:
-  print("Wrong Input! Type 0 for Rock, 1 for Paper, 2 for Scissors")
+    game_images = [rock,paper,scissors]
 
-computer_option = random.randint(0,2)
+    if(option == 0 or option == 1 or option == 2):
+      print(game_images[option])
+    else:
+      print("Wrong Input! Type 0 for Rock, 1 for Paper, 2 for Scissors")
 
-print("Computer chose:")
+    computer_option = random.randint(0,2)
 
-print(game_images[computer_option])
-if((option == 0 and computer_option == 2) or (option == 0 and computer_option == 2) or (option == 1 and computer_option == 0)) :
-  print("You Won!")
-elif(option == computer_option):
-  print("Draw!")
-else:
-  print("You Lost!")
+    print("Computer chose:")
+
+    print(game_images[computer_option])
+    if((option == 0 and computer_option == 2) or
+            (option == 0 and computer_option == 2) or
+            (option == 1 and computer_option == 0)) :
+      print("You Won!")
+    elif(option == computer_option):
+      print("Draw!")
+    else:
+      print("You Lost!")
+
+    game = input('Do you want to continue? Yes/No ')
+
+    if game == 'No':
+        game_continue = False
